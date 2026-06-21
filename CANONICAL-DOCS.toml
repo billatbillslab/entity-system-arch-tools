@@ -1,0 +1,24 @@
+[project]
+name   = "Entity System Architecture Tools"
+slug   = "entity-system-arch-tools"
+repo   = "entity-system-arch-tools"
+github = "https://github.com/EntityChurch/entity-system-arch-tools"
+intro  = """
+The publishable spec toolkit for the Entity spec corpus: one tool, one
+functional core, commands as pathways into it (tree / render / topology / standards /
+style / check). Stdlib-only Python, hermetic podman + make, exit-code gating. Decoupled
+from spec version; ships as its own package.
+"""
+
+# ── Overview ──────────────────────────────────────────────────────────────────
+[[doc]]
+path  = "README.md"
+title = "Entity System Architecture Tools"
+blurb = "One functional core, commands as pathways into it:"
+group = "Overview"
+
+[[doc]]
+path  = "spec-tool/README.md"
+title = "`spec` — the unified spec toolkit (v2)"
+blurb = "One tool, one functional core, commands as pathways into it."
+group = "Overview"

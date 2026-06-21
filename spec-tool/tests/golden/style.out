@@ -1,0 +1,34 @@
+==========================================================================
+spec-style audit — split standard (kebab namespace / snake keys)
+==========================================================================
+files scanned: 7   identifier hits: 33
+
+per-axis rule & result
+  axis        rule             gated?  violations
+  type-path   kebab            yes              2
+  field       report-only      no               0
+  value       kebab+snake      yes              0
+  other-path  report-only      no               0
+  pseudo-fn   report-only      no               0
+  bare        report-only      no               0
+
+landscape  (axis x separator, all hits)
+  axis          snake   kebab   mixed  single   other
+  type-path         1      10       1       4       0
+  value             0       0       0       5       0
+  other-path        0       1       0       0       0
+  pseudo-fn         1       0       0       0       0
+  bare              6       3       1       0       0
+
+ADJUDICATION LIST: 2 distinct identifiers to fix (2 occurrences)
+(these are the real V8 rename targets under the split standard)
+
+     1x  system/bad_path/snake-root         [type-path/snake]  1 file(s)
+     1x  entity/mixed-name_token            [type-path/mixed]  1 file(s)
+
+violations per file
+     2  corpus/specs/EXTENSION-GADGET.md
+
+==========================================================================
+RESULT: 2 violations / 2 identifiers
+==========================================================================

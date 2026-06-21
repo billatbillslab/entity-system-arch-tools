@@ -1,0 +1,11 @@
+structural symbol census
+  headings (sections):   8
+    h2 / h3 / h4+ :      3 / 4 / 0
+  paragraph            8
+  type-def             1
+  typename             1
+  pseudocode           1
+  table                1
+  distinct type-defs:    1
+  distinct type-paths:   2
+  RFC-2119 keywords:     MUST:3, MAY:1, SHALL:1, SHOULD:1

@@ -1,0 +1,67 @@
+# Type catalog — SPECIFICATION-FORMAT.md
+
+_Derived from `SPECIFICATION-FORMAT.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**0 definitions**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | kind | § | line |
+|---|---|---|---|
+
+## Entries
+
+
+---
+
+# Algorithm catalog — SPECIFICATION-FORMAT.md
+
+_Derived from `SPECIFICATION-FORMAT.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**0 algorithms**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | § | line |
+|---|---|---|
+
+## Entries
+
+
+---
+
+# Constant & code tables — SPECIFICATION-FORMAT.md
+
+_Derived from `SPECIFICATION-FORMAT.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**0 tables**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | rows | § | line |
+|---|---|---|---|
+
+## Entries
+
+
+---
+
+# Conformance matrix — SPECIFICATION-FORMAT.md
+
+_Derived from `SPECIFICATION-FORMAT.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**1 requirement**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | keyword | § | line |
+|---|---|---|---|
+| `§8.1·r1` | REQUIRED | §8.1 | 28 |
+
+## Entries
+
+### §8.1 Depends
+
+#### `§8.1·r1`  ·L28
+
+The Depends: field is REQUIRED for any document whose name begins with the extension prefix.

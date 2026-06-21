@@ -1,0 +1,128 @@
+{
+  "level": 0,
+  "number": "",
+  "title": "(document)",
+  "line": 0,
+  "blocks": [],
+  "secrefs": [],
+  "extrefs": [],
+  "children": [
+    {
+      "level": 1,
+      "number": "",
+      "title": "Example Specification Format",
+      "line": 1,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "line": 3,
+          "meta": "2 lines"
+        },
+        {
+          "kind": "paragraph",
+          "line": 6,
+          "meta": "4 lines"
+        }
+      ],
+      "secrefs": [],
+      "extrefs": [],
+      "children": [
+        {
+          "level": 2,
+          "number": "1",
+          "title": "Header",
+          "line": 11,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 13,
+              "meta": "2 lines"
+            }
+          ],
+          "secrefs": [
+            "1"
+          ],
+          "extrefs": [
+            "ENTITY-CORE-PROTOCOL"
+          ],
+          "children": []
+        },
+        {
+          "level": 2,
+          "number": "2",
+          "title": "Body",
+          "line": 16,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 18,
+              "meta": "1 lines"
+            }
+          ],
+          "secrefs": [],
+          "extrefs": [],
+          "children": []
+        },
+        {
+          "level": 2,
+          "number": "8",
+          "title": "Extensions",
+          "line": 20,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 22,
+              "meta": "3 lines"
+            }
+          ],
+          "secrefs": [
+            "1",
+            "3"
+          ],
+          "extrefs": [
+            "ENTITY-NATIVE-TYPE-SYSTEM",
+            "EXTENSION-WIDGET"
+          ],
+          "children": [
+            {
+              "level": 3,
+              "number": "8.1",
+              "title": "Depends",
+              "line": 26,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 28,
+                  "meta": "2 lines"
+                }
+              ],
+              "secrefs": [],
+              "extrefs": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "number": "11",
+          "title": "Citations",
+          "line": 31,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 33,
+              "meta": "2 lines"
+            }
+          ],
+          "secrefs": [
+            "2.1"
+          ],
+          "extrefs": [
+            "ENTITY-CORE-PROTOCOL"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "level": 0,
+  "number": "",
+  "title": "(document)",
+  "line": 0,
+  "blocks": [],
+  "secrefs": [],
+  "extrefs": [],
+  "children": [
+    {
+      "level": 1,
+      "number": "",
+      "title": "Example Native Type System Specification",
+      "line": 1,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "line": 3,
+          "meta": "2 lines"
+        },
+        {
+          "kind": "paragraph",
+          "line": 6,
+          "meta": "3 lines"
+        }
+      ],
+      "secrefs": [],
+      "extrefs": [],
+      "children": [
+        {
+          "level": 2,
+          "number": "1",
+          "title": "Introduction",
+          "line": 10,
+          "blocks": [],
+          "secrefs": [],
+          "extrefs": [],
+          "children": [
+            {
+              "level": 3,
+              "number": "1.1",
+              "title": "Purpose",
+              "line": 12,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 14,
+                  "meta": "2 lines"
+                }
+              ],
+              "secrefs": [
+                "2"
+              ],
+              "extrefs": [
+                "ENTITY-CORE-PROTOCOL"
+              ],
+              "children": []
+            },
+            {
+              "level": 3,
+              "number": "1.2",
+              "title": "Notation",
+              "line": 17,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 19,
+                  "meta": "1 lines"
+                }
+              ],
+              "secrefs": [],
+              "extrefs": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "number": "2",
+          "title": "Primitive Types",
+          "line": 21,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 23,
+              "meta": "1 lines"
+            },
+            {
+              "kind": "type-def",
+              "line": 25,
+              "meta": ""
+            },
+            {
+              "kind": "typename",
+              "line": 25,
+              "meta": "primitive/byte-string"
+            },
+            {
+              "kind": "typename",
+              "line": 25,
+              "meta": "primitive/unsigned-int"
+            },
+            {
+              "kind": "typename",
+              "line": 25,
+              "meta": "primitive/bool-flag"
+            }
+          ],
+          "secrefs": [],
+          "extrefs": [],
+          "children": [
+            {
+              "level": 3,
+              "number": "2.1",
+              "title": "Primitive Registry",
+              "line": 31,
+              "blocks": [
+                {
+                  "kind": "table",
+                  "line": 33,
+                  "meta": "5 rows"
+                }
+              ],
+              "secrefs": [],
+              "extrefs": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "number": "3",
+          "title": "Composite Types",
+          "line": 39,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 41,
+              "meta": "1 lines"
+            },
+            {
+              "kind": "type-def",
+              "line": 43,
+              "meta": ""
+            },
+            {
+              "kind": "typename",
+              "line": 43,
+              "meta": "system/type/name"
+            },
+            {
+              "kind": "typename",
+              "line": 43,
+              "meta": "system/tree/path"
+            },
+            {
+              "kind": "typename",
+              "line": 43,
+              "meta": "entity/grant/entry"
+            }
+          ],
+          "secrefs": [],
+          "extrefs": [],
+          "children": [
+            {
+              "level": 3,
+              "number": "3.1",
+              "title": "Composition Rules",
+              "line": 49,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 51,
+                  "meta": "3 lines"
+                }
+              ],
+              "secrefs": [
+                "2.1"
+              ],
+              "extrefs": [
+                "ENTITY-CORE-PROTOCOL"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "number": "4",
+          "title": "Constraints",
+          "line": 55,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 57,
+              "meta": "2 lines"
+            }
+          ],
+          "secrefs": [],
+          "extrefs": [],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

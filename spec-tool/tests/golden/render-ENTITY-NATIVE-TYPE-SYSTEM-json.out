@@ -1,0 +1,84 @@
+{
+  "spec": "ENTITY-NATIVE-TYPE-SYSTEM.md",
+  "catalogs": {
+    "types": [
+      {
+        "name": "primitive/byte-string",
+        "section": "2",
+        "section_title": "Primitive Types",
+        "line": 26,
+        "body": "primitive/byte-string := { kind: \"bytes\" }",
+        "def_kind": "record"
+      },
+      {
+        "name": "primitive/unsigned-int",
+        "section": "2",
+        "section_title": "Primitive Types",
+        "line": 27,
+        "body": "primitive/unsigned-int := { kind: \"uint\" }",
+        "def_kind": "record"
+      },
+      {
+        "name": "primitive/bool-flag",
+        "section": "2",
+        "section_title": "Primitive Types",
+        "line": 28,
+        "body": "primitive/bool-flag := { kind: \"bool\" }",
+        "def_kind": "record"
+      },
+      {
+        "name": "system/type/name",
+        "section": "3",
+        "section_title": "Composite Types",
+        "line": 44,
+        "body": "system/type/name := { fields: { label: primitive/byte-string } }",
+        "def_kind": "record"
+      },
+      {
+        "name": "system/tree/path",
+        "section": "3",
+        "section_title": "Composite Types",
+        "line": 45,
+        "body": "system/tree/path := { fields: { segments: primitive/byte-string } }",
+        "def_kind": "record"
+      },
+      {
+        "name": "entity/grant/entry",
+        "section": "3",
+        "section_title": "Composite Types",
+        "line": 46,
+        "body": "entity/grant/entry := { fields: { holder: peer_id, scope: primitive/byte-string } }",
+        "def_kind": "record"
+      }
+    ],
+    "algorithms": [],
+    "constants": [
+      {
+        "name": "Primitive Registry",
+        "section": "2.1",
+        "section_title": "Primitive Registry",
+        "line": 33,
+        "body": "| type | kind |\n| --- | --- |\n| primitive/byte-string | bytes |\n| primitive/unsigned-int | uint |\n| primitive/bool-flag | bool |",
+        "rows": 3
+      }
+    ],
+    "conformance": [
+      {
+        "name": "\u00a73.1\u00b7r1",
+        "section": "3.1",
+        "section_title": "Composition Rules",
+        "line": 51,
+        "body": "A composite type MUST reference each field type by its canonical path.",
+        "keyword": "MUST"
+      },
+      {
+        "name": "\u00a74\u00b7r1",
+        "section": "4",
+        "section_title": "Constraints",
+        "line": 57,
+        "body": "Constraints MUST NOT widen a type.",
+        "keyword": "MUST NOT"
+      }
+    ]
+  }
+}

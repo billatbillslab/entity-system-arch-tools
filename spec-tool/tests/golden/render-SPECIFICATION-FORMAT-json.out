@@ -1,0 +1,18 @@
+{
+  "spec": "SPECIFICATION-FORMAT.md",
+  "catalogs": {
+    "types": [],
+    "algorithms": [],
+    "constants": [],
+    "conformance": [
+      {
+        "name": "\u00a78.1\u00b7r1",
+        "section": "8.1",
+        "section_title": "Depends",
+        "line": 28,
+        "body": "The Depends: field is REQUIRED for any document whose name begins with the extension prefix.",
+        "keyword": "REQUIRED"
+      }
+    ]
+  }
+}

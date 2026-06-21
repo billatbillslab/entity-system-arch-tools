@@ -1,0 +1,9 @@
+Example Native Type System Specification  ·L1  [paragraph:2]
+  1 Introduction  ·L10
+    1.1 Purpose  ·L12  [paragraph:1]
+    1.2 Notation  ·L17  [paragraph:1]
+  2 Primitive Types  ·L21  [paragraph:1 type-def:1 typename:3]
+    2.1 Primitive Registry  ·L31  [table:1]
+  3 Composite Types  ·L39  [paragraph:1 type-def:1 typename:3]
+    3.1 Composition Rules  ·L49  [paragraph:1]
+  4 Constraints  ·L55  [paragraph:1]

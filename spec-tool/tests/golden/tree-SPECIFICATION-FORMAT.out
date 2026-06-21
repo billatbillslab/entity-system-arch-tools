@@ -1,0 +1,6 @@
+Example Specification Format  ·L1  [paragraph:2]
+  1 Header  ·L11  [paragraph:1]
+  2 Body  ·L16  [paragraph:1]
+  8 Extensions  ·L20  [paragraph:1]
+    8.1 Depends  ·L26  [paragraph:1]
+  11 Citations  ·L31  [paragraph:1]

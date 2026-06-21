@@ -1,0 +1,220 @@
+# ============================================================================
+# config.default.toml — the single source of truth for the spec toolkit.
+#
+# A different corpus is a different copy of this file (`spec --config FILE`).
+# The code is one; the corpus knowledge lives here. This is what makes "the
+# entity-systems spec tool" and "the core-protocol spec tool" one codebase.
+#
+# REFACTOR STATUS (v2, Phase 1): this file initially encodes TODAY'S per-tool
+# reality byte-for-byte, so each analyzer's output stays identical when it
+# switches from its own hardcoded constants to reading this file. Lines tagged
+#   # DELTA(phase2)
+# mark the inconsistencies the operator reconciles in Phase 2 — preserved as-is
+# for now, on purpose, so Phase 1 is a provably non-breaking move.
+# ============================================================================
+
+[corpus]
+# Resolved relative to the repo root (the tool finds it from its own location).
+# Every scope root below is relative to this.
+repo_root = "docs/architecture/v7.0-core-revision"
+
+
+# --- project vocabulary -----------------------------------------------------
+# Was triplicated: type_roots in spec-style AND spec-tree; doc_families in
+# spec-topology. One home now.
+[vocabulary]
+# Slash-path first-segments that denote ENTITY TYPES (held to the kebab naming
+# rule). Everything else is a source/config/url path, not gated.
+# (was spec-style TYPE_ROOTS + spec-tree TYPEPATH_RE)
+type_roots = ["system", "primitive", "entity"]
+
+# Doc-family name prefixes used to recognise a cross-document citation target.
+# (was spec-topology DOC_VOCAB_EXTRA)
+doc_families = [
+  "PROPOSAL", "EXPLORATION", "RULING", "HANDOFF", "FEEDBACK", "REVIEW",
+  "ANALYSIS", "STATUS", "PLAN", "REPORT", "SYNTHESIS", "RECONCILIATION",
+  "METHODOLOGY", "CROSS", "MILESTONE", "WORKSTREAMS", "PRIMER", "DESIGN",
+  "SPEC", "GUIDE", "ARCHITECTURE",
+]
+
+# Accepted values for a spec's `**Status**:` header. (was spec-standards CANONICAL_STATUS)
+canonical_status = ["Draft", "Active", "Superseded", "Normative"]
+
+# Doc-name family prefixes that denote a PROCESS / INTENT artifact (proposals,
+# explorations, reviews, handoffs, status, design notes…). SPECIFICATION-FORMAT
+# §11.3: a normative spec MUST NOT cite these; an arch/guide doc MAY (it's
+# informational provenance). `address` uses this to classify a citation target.
+intent_families = [
+  "PROPOSAL", "EXPLORATION", "RULING", "HANDOFF", "FEEDBACK", "REVIEW",
+  "ANALYSIS", "STATUS", "PLAN", "REPORT", "SYNTHESIS", "RECONCILIATION",
+  "METHODOLOGY", "MILESTONE", "DESIGN", "SESSION", "WORKSTREAMS", "BACKLOG",
+]
+
+# Prose nicknames that stand in for a document name. SPECIFICATION-FORMAT §11.2:
+# "a prose name is not a citation" — the citation is the canonical `DOC.md`. The
+# `address` analyzer detects a nickname ONLY where it immediately governs a
+# `§N.M` (`V7 §5.2`), never bare prose ("the V7 era", version strings). The fix
+# is rewriting the spec to canonical form; this map makes detection auditable, it
+# does NOT mute the finding. A value of "" marks a self/ambiguous nickname
+# ("this spec", "per spec") — always judgment-tier (self vs an upstream-named doc).
+[vocabulary.nicknames]
+"V7" = "ENTITY-CORE-PROTOCOL"
+"core protocol" = "ENTITY-CORE-PROTOCOL"
+"the core protocol" = "ENTITY-CORE-PROTOCOL"
+"base protocol" = "ENTITY-CORE-PROTOCOL"
+"this spec" = ""
+"the spec" = ""
+"per spec" = ""
+"this doc" = ""
+"this document" = ""
+
+
+# --- document classes -------------------------------------------------------
+# The CONCEPT (canonical-spec / guide / arch-doc) grounds citation legitimacy
+# in SPECIFICATION-FORMAT §11.3. The concrete ASSIGNMENT of files to classes is
+# tool-scoping config, not a normative spec section (design §2.8). Class drives
+# what a citation into it means (a guide citing a spec is fine; a spec citing a
+# guide is a leak). Phase 2 populates the overrides.
+[classes]
+default = "canonical-spec"
+# overrides: filename glob -> class. `address` uses class to ground citation
+# legitimacy (§11.3): a normative spec citing an intent artifact is a leak; an
+# arch/guide doc citing one is permitted provenance. Class drives DISPOSITION,
+# not discovery — every doc is still scanned.
+"GUIDE-*.md"               = "guide"
+"MACHINE-SPEC.md"          = "guide"
+"ENTITY-CORE-MACHINE-SPEC.md" = "guide"
+"SPECIFICATION-FORMAT.md"  = "guide"
+"STYLE-NAMING-CONVENTIONS.md" = "guide"
+"ARCHITECTURE-*.md"        = "arch-doc"
+"PRIMER-*.md"              = "arch-doc"
+"SYSTEM-ARCHITECTURE.md"   = "arch-doc"
+"SYSTEM-IDENTITY-COMPOSITION.md" = "arch-doc"
+"ENTITY-SYSTEM-REFERENCE.md" = "arch-doc"
+# SYSTEM-COMPOSITION stays canonical-spec (load-bearing, highly cited).
+
+
+# ============================================================================
+# Scope profiles. Each analyzer names a profile (below). TODAY the three corpus
+# tools disagree on root AND excludes; Phase 1 preserves that exactly by giving
+# them distinct profiles. Phase 2 collapses these to one reconciled scope.
+#
+#   namespace scope = what's LOADED so references resolve
+#   analysis scope  = what we're STRICT about / cleaning
+# A reference into namespace-but-not-analysis scope is external/forward, normal.
+# (Phase 1 has no scope split yet; profiles below are single-root analysis sets.)
+# ============================================================================
+
+[scope.core-specs]          # spec-topology's view today
+root = "core-protocol-domain/specs"
+exclude_dirs = ["deprecated", "archived"]
+exclude_files = []
+
+[scope.core-specs-strict]   # spec-standards' view today
+root = "core-protocol-domain/specs"
+exclude_dirs = ["deprecated", "archived", "reviews", "explorations",
+                "proposals", "__pycache__", ".git", "node_modules"]
+# The rulebooks quote their own counter-examples; never lint them.
+exclude_files = ["SPECIFICATION-FORMAT.md", "STYLE-NAMING-CONVENTIONS.md", "BACKLOG.md"]
+
+[scope.addressing-namespace]  # what citation targets RESOLVE against (wide)
+# Every real doc in the revision tree — so `address` can tell a TRUE dangling
+# (no file anywhere) from a citation into a doc that simply sits outside the
+# analysis scope (a proposal/exploration/guide). Resolution scope ⊋ analysis.
+root = "."
+exclude_dirs = ["deprecated", "archived", "archive", "__pycache__", ".git", "node_modules"]
+exclude_files = []
+
+[scope.naming-surface]      # spec-style's view today (the WHOLE v7 tree)
+root = "."
+exclude_dirs = ["deprecated", "archived", "archive", "test-vectors",
+                "reviews", "proposals", "explorations"]
+exclude_files = ["STYLE-NAMING-CONVENTIONS.md"]
+# DELTA(phase2): style roots at the whole revision tree; topology + standards
+# root at core-protocol-domain/specs. Reconcile to ONE corpus root + class-based
+# scoping (the naming rule governs every doc with normative type-paths, not just
+# specs/ — so the reconciled scope is wider than core-specs but excludes intent
+# and historical material, which classes express cleanly).
+
+
+# ============================================================================
+# Analyzer bindings + policy.
+# Principle #3: analyzers emit observations; VERDICTS live here. "error" gates
+# (non-zero exit); "warn"/"info" report. The same observation is an error in one
+# config and expected in another, with no analyzer code change.
+# ============================================================================
+
+[analyzer.topology]
+scope = "core-specs"
+# Unresolved ("dangling") citations are OBSERVATIONS, not errors by default.
+# A core spec citing a downstream extension for narrative clarity is normal.
+unresolved_ref = "info"     # DELTA(phase2): tune once namespace/analysis split lands
+
+[analyzer.standards]
+scope = "core-specs-strict"
+# Severity per rule (was spec-standards RULES). "error" gates.
+[analyzer.standards.rules]
+header-version-missing   = "error"
+header-version-blob      = "error"
+header-status-missing    = "error"
+header-status-unknown    = "warn"
+title-not-h1             = "error"
+depends-missing          = "error"
+document-history-section = "warn"
+date-in-body             = "warn"
+impl-team-ref            = "warn"
+proposal-citation        = "warn"
+amendment-provenance     = "warn"
+
+[analyzer.style]
+scope = "naming-surface"
+# PASS separator-styles per naming axis; "off" = report-only (was AXIS_POLICY).
+# An axis whose value list does not include the token's style is a violation
+# (gates). SINGLE always passes. Encoding/hash prefixes are exempt.
+[analyzer.style.axes]
+type-path  = ["kebab"]          # namespace -> kebab; snake/mixed = real violation
+value      = ["snake", "kebab"] # error-code(snake) or enum(kebab); only mixed fails
+field      = "off"              # token-followed-by-':' heuristic too coarse to gate (v0.3)
+other-path = "off"
+pseudo-fn  = "off"
+bare       = "off"
+
+
+# ============================================================================
+# REPORT / OUTPUT POLICY  —  Phase 2, NOT YET WIRED (sketch for review).
+#
+# Discovery (everything above) finds EVERYTHING. The report layer decides what
+# to SURFACE. Acknowledged findings are suppressed here — like linter rule
+# exclusions / a baseline — so a known, reviewed, documented issue stops
+# harassing every run WITHOUT being hidden from discovery (it's still found,
+# still counted, still shown under --show-suppressed).
+#
+# This keeps two concerns cleanly separate:
+#   what IS the corpus / what to analyze     (stable, structural)   -> above
+#   what have I acknowledged / how to render (grows as you triage)  -> here
+# A suppressions list MAY instead live in a sibling file (--suppressions FILE);
+# same-file / distinct-section is the default.
+# ============================================================================
+
+[report]
+format = "md"            # md | json
+max_examples = 5         # per rule, before "... +N more"
+
+# Baseline: each entry marks matching observations as acknowledged -> suppressed
+# from the default report. Append as you triage; give a reason so it's auditable.
+#
+# Worked example — the rulebook counter-example problem, solved cleanly: instead
+# of HARD-EXCLUDING SPECIFICATION-FORMAT from the corpus (which blinds topology
+# to its real citations), keep it discovered and SUPPRESS its expected findings
+# here. This retires the meta-spec exclude DELTA: discovery converges (every tool
+# sees every file), report diverges (acknowledged noise stays quiet).
+#
+# [[report.suppress]]
+# rule   = "type-path"
+# path   = "SPECIFICATION-FORMAT.md"
+# reason = "the rulebook quotes non-conforming forms to define the rule"
+#
+# [[report.suppress]]
+# rule   = "*"
+# path   = "STYLE-NAMING-CONVENTIONS.md"
+# reason = "the style guide's own counter-example fixtures"

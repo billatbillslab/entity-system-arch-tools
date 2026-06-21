@@ -1,0 +1,9 @@
+internal cross-refs (§N.M)  — 3 distinct targets, 4 total
+  §1        x2
+  §3        x1
+  §2.1      x1
+
+external doc references — 3 distinct
+  ENTITY-CORE-PROTOCOL                     x4
+  EXTENSION-WIDGET                         x2
+  ENTITY-NATIVE-TYPE-SYSTEM                x2

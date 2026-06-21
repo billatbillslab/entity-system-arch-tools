@@ -1,0 +1,76 @@
+{
+  "spec": "ENTITY-CORE-PROTOCOL.md",
+  "catalogs": {
+    "types": [
+      {
+        "name": "root-entry",
+        "section": "2.2",
+        "section_title": "Wire Shape",
+        "line": 54,
+        "body": "root-entry := { type: \"system/entity/root-entry\", id: peer_id }",
+        "def_kind": "record"
+      }
+    ],
+    "algorithms": [
+      {
+        "name": "verify_request",
+        "section": "2",
+        "section_title": "Bootstrap",
+        "line": 30,
+        "body": "verify_request(peer_id, payload):\n    if not valid(peer_id):\n        return DENY\n    return ALLOW"
+      }
+    ],
+    "constants": [
+      {
+        "name": "system/capability/grant-entry, which a peer MUST resolve before granting",
+        "section": "2.1",
+        "section_title": "Addressing",
+        "line": 42,
+        "body": "| field | meaning |\n| --- | --- |\n| peer_id | the canonical host identifier |\n| content_hash | the address of the payload |",
+        "rows": 2
+      }
+    ],
+    "conformance": [
+      {
+        "name": "\u00a71.1\u00b7r1",
+        "section": "1.1",
+        "section_title": "Purpose",
+        "line": 15,
+        "body": "A conforming peer MUST honour the bootstrap rules in \u00a72.",
+        "keyword": "MUST"
+      },
+      {
+        "name": "\u00a71.2\u00b7r1",
+        "section": "1.2",
+        "section_title": "Scope",
+        "line": 21,
+        "body": "It does not cover extensions; those live in their own EXTENSION-WIDGET \u00a71 documents and MAY layer on top per SPECIFICATION-FORMAT \u00a78.",
+        "keyword": "MAY"
+      },
+      {
+        "name": "\u00a72\u00b7r1",
+        "section": "2",
+        "section_title": "Bootstrap",
+        "line": 27,
+        "body": "A peer SHALL acquire a root entity before serving requests.",
+        "keyword": "SHALL"
+      },
+      {
+        "name": "\u00a72.1\u00b7r1",
+        "section": "2.1",
+        "section_title": "Addressing",
+        "line": 39,
+        "body": "The canonical example is system/capability/grant-entry, which a peer MUST resolve before granting.",
+        "keyword": "MUST"
+      },
+      {
+        "name": "\u00a73\u00b7r1",
+        "section": "3",
+        "section_title": "Conformance",
+        "line": 59,
+        "body": "A conforming implementation MUST pass every requirement in \u00a72 and SHOULD expose the addressing surface from \u00a72.1.",
+        "keyword": "MUST"
+      }
+    ]
+  }
+}

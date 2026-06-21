@@ -1,0 +1,24 @@
+
+corpus/specs/ARCHITECTURE-NOTES.md  (2 error, 4 warn)
+  ERROR  title-not-h1               corpus/specs/ARCHITECTURE-NOTES.md:1  Not an H1 title — this first line is plain prose, so the standards gate flags
+  ERROR  header-version-blob        corpus/specs/ARCHITECTURE-NOTES.md:4  1.0 — a long trailing changelog blob that runs well past the sixty
+  warn   amendment-provenance       x1
+           corpus/specs/ARCHITECTURE-NOTES.md:11  This document folds in Amendment 1 and Amendment 2 of the example stack, which
+  warn   document-history-section   x1
+           corpus/specs/ARCHITECTURE-NOTES.md:20  ## Document History
+  warn   impl-team-ref              x1
+           corpus/specs/ARCHITECTURE-NOTES.md:17  The convergence work was carried by the godot and raylib reference cohorts,
+  warn   proposal-citation          x1
+           corpus/specs/ARCHITECTURE-NOTES.md:14  It graduated from `proposals/example-widget.md`, a process-routing citation
+
+corpus/specs/ARCHITECTURE-STUB.md  (2 error, 0 warn)
+  ERROR  header-version-missing     corpus/specs/ARCHITECTURE-STUB.md:1  
+  ERROR  header-status-missing      corpus/specs/ARCHITECTURE-STUB.md:1  
+
+corpus/specs/EXTENSION-GADGET.md  (1 error, 1 warn)
+  ERROR  depends-missing            corpus/specs/EXTENSION-GADGET.md:1  
+  warn   header-status-unknown      x1
+           corpus/specs/EXTENSION-GADGET.md:4  Experimental
+
+3 file(s) flagged — 5 error(s), 5 warning(s).
+errors gate; warnings are editorial candidates (run --refine for the safe subset).

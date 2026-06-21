@@ -1,0 +1,131 @@
+# Type catalog — ENTITY-NATIVE-TYPE-SYSTEM.md
+
+_Derived from `ENTITY-NATIVE-TYPE-SYSTEM.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**6 definitions**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | kind | § | line |
+|---|---|---|---|
+| `primitive/byte-string` | record | §2 | 26 |
+| `primitive/unsigned-int` | record | §2 | 27 |
+| `primitive/bool-flag` | record | §2 | 28 |
+| `system/type/name` | record | §3 | 44 |
+| `system/tree/path` | record | §3 | 45 |
+| `entity/grant/entry` | record | §3 | 46 |
+
+## Entries
+
+### §2 Primitive Types
+
+#### `primitive/byte-string`  ·L26
+
+```
+primitive/byte-string := { kind: "bytes" }
+```
+
+#### `primitive/unsigned-int`  ·L27
+
+```
+primitive/unsigned-int := { kind: "uint" }
+```
+
+#### `primitive/bool-flag`  ·L28
+
+```
+primitive/bool-flag := { kind: "bool" }
+```
+
+### §3 Composite Types
+
+#### `system/type/name`  ·L44
+
+```
+system/type/name := { fields: { label: primitive/byte-string } }
+```
+
+#### `system/tree/path`  ·L45
+
+```
+system/tree/path := { fields: { segments: primitive/byte-string } }
+```
+
+#### `entity/grant/entry`  ·L46
+
+```
+entity/grant/entry := { fields: { holder: peer_id, scope: primitive/byte-string } }
+```
+
+
+---
+
+# Algorithm catalog — ENTITY-NATIVE-TYPE-SYSTEM.md
+
+_Derived from `ENTITY-NATIVE-TYPE-SYSTEM.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**0 algorithms**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | § | line |
+|---|---|---|
+
+## Entries
+
+
+---
+
+# Constant & code tables — ENTITY-NATIVE-TYPE-SYSTEM.md
+
+_Derived from `ENTITY-NATIVE-TYPE-SYSTEM.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**1 table**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | rows | § | line |
+|---|---|---|---|
+| `Primitive Registry` | 3 | §2.1 | 33 |
+
+## Entries
+
+### §2.1 Primitive Registry
+
+#### `Primitive Registry`  ·L33
+
+| type | kind |
+| --- | --- |
+| primitive/byte-string | bytes |
+| primitive/unsigned-int | uint |
+| primitive/bool-flag | bool |
+
+
+---
+
+# Conformance matrix — ENTITY-NATIVE-TYPE-SYSTEM.md
+
+_Derived from `ENTITY-NATIVE-TYPE-SYSTEM.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**2 requirements**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | keyword | § | line |
+|---|---|---|---|
+| `§3.1·r1` | MUST | §3.1 | 51 |
+| `§4·r1` | MUST NOT | §4 | 57 |
+
+## Entries
+
+### §3.1 Composition Rules
+
+#### `§3.1·r1`  ·L51
+
+A composite type MUST reference each field type by its canonical path.
+
+### §4 Constraints
+
+#### `§4·r1`  ·L57
+
+Constraints MUST NOT widen a type.

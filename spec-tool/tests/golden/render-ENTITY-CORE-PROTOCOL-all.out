@@ -1,0 +1,126 @@
+# Type catalog — ENTITY-CORE-PROTOCOL.md
+
+_Derived from `ENTITY-CORE-PROTOCOL.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**1 definition**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | kind | § | line |
+|---|---|---|---|
+| `root-entry` | record | §2.2 | 54 |
+
+## Entries
+
+### §2.2 Wire Shape
+
+#### `root-entry`  ·L54
+
+```
+root-entry := { type: "system/entity/root-entry", id: peer_id }
+```
+
+
+---
+
+# Algorithm catalog — ENTITY-CORE-PROTOCOL.md
+
+_Derived from `ENTITY-CORE-PROTOCOL.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**1 algorithm**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | § | line |
+|---|---|---|
+| `verify_request` | §2 | 30 |
+
+## Entries
+
+### §2 Bootstrap
+
+#### `verify_request`  ·L30
+
+```
+verify_request(peer_id, payload):
+    if not valid(peer_id):
+        return DENY
+    return ALLOW
+```
+
+
+---
+
+# Constant & code tables — ENTITY-CORE-PROTOCOL.md
+
+_Derived from `ENTITY-CORE-PROTOCOL.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**1 table**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | rows | § | line |
+|---|---|---|---|
+| `system/capability/grant-entry, which a peer MUST resolve before granting` | 2 | §2.1 | 42 |
+
+## Entries
+
+### §2.1 Addressing
+
+#### `system/capability/grant-entry, which a peer MUST resolve before granting`  ·L42
+
+| field | meaning |
+| --- | --- |
+| peer_id | the canonical host identifier |
+| content_hash | the address of the payload |
+
+
+---
+
+# Conformance matrix — ENTITY-CORE-PROTOCOL.md
+
+_Derived from `ENTITY-CORE-PROTOCOL.md` by `spec render`. Source is canonical; regenerate, do not hand-edit._
+
+**5 requirements**, addressed by the `§N.M` they live in.
+
+## Index
+
+| name | keyword | § | line |
+|---|---|---|---|
+| `§1.1·r1` | MUST | §1.1 | 15 |
+| `§1.2·r1` | MAY | §1.2 | 21 |
+| `§2·r1` | SHALL | §2 | 27 |
+| `§2.1·r1` | MUST | §2.1 | 39 |
+| `§3·r1` | MUST | §3 | 59 |
+
+## Entries
+
+### §1.1 Purpose
+
+#### `§1.1·r1`  ·L15
+
+A conforming peer MUST honour the bootstrap rules in §2.
+
+### §1.2 Scope
+
+#### `§1.2·r1`  ·L21
+
+It does not cover extensions; those live in their own EXTENSION-WIDGET §1 documents and MAY layer on top per SPECIFICATION-FORMAT §8.
+
+### §2 Bootstrap
+
+#### `§2·r1`  ·L27
+
+A peer SHALL acquire a root entity before serving requests.
+
+### §2.1 Addressing
+
+#### `§2.1·r1`  ·L39
+
+The canonical example is system/capability/grant-entry, which a peer MUST resolve before granting.
+
+### §3 Conformance
+
+#### `§3·r1`  ·L59
+
+A conforming implementation MUST pass every requirement in §2 and SHOULD expose the addressing surface from §2.1.

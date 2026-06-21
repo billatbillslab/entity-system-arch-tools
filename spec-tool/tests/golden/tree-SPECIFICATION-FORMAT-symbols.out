@@ -1,0 +1,6 @@
+structural symbol census
+  headings (sections):   6
+    h2 / h3 / h4+ :      4 / 1 / 0
+  paragraph            7
+  distinct type-paths:   0
+  RFC-2119 keywords:     REQUIRED:1

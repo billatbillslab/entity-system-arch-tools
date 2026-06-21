@@ -1,0 +1,177 @@
+{
+  "level": 0,
+  "number": "",
+  "title": "(document)",
+  "line": 0,
+  "blocks": [],
+  "secrefs": [],
+  "extrefs": [],
+  "children": [
+    {
+      "level": 1,
+      "number": "",
+      "title": "Example Core Protocol Specification",
+      "line": 1,
+      "blocks": [
+        {
+          "kind": "paragraph",
+          "line": 3,
+          "meta": "2 lines"
+        },
+        {
+          "kind": "paragraph",
+          "line": 6,
+          "meta": "4 lines"
+        }
+      ],
+      "secrefs": [],
+      "extrefs": [],
+      "children": [
+        {
+          "level": 2,
+          "number": "1",
+          "title": "Introduction",
+          "line": 11,
+          "blocks": [],
+          "secrefs": [],
+          "extrefs": [],
+          "children": [
+            {
+              "level": 3,
+              "number": "1.1",
+              "title": "Purpose",
+              "line": 13,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 15,
+                  "meta": "3 lines"
+                }
+              ],
+              "secrefs": [
+                "2",
+                "3"
+              ],
+              "extrefs": [
+                "ENTITY-NATIVE-TYPE-SYSTEM"
+              ],
+              "children": []
+            },
+            {
+              "level": 3,
+              "number": "1.2",
+              "title": "Scope",
+              "line": 19,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 21,
+                  "meta": "3 lines"
+                }
+              ],
+              "secrefs": [
+                "1",
+                "8"
+              ],
+              "extrefs": [
+                "EXTENSION-WIDGET",
+                "SPECIFICATION-FORMAT"
+              ],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "number": "2",
+          "title": "Bootstrap",
+          "line": 25,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 27,
+              "meta": "2 lines"
+            },
+            {
+              "kind": "pseudocode",
+              "line": 30,
+              "meta": ""
+            }
+          ],
+          "secrefs": [],
+          "extrefs": [],
+          "children": [
+            {
+              "level": 3,
+              "number": "2.1",
+              "title": "Addressing",
+              "line": 37,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 39,
+                  "meta": "2 lines"
+                },
+                {
+                  "kind": "table",
+                  "line": 42,
+                  "meta": "4 rows"
+                }
+              ],
+              "secrefs": [],
+              "extrefs": [],
+              "children": []
+            },
+            {
+              "level": 3,
+              "number": "2.2",
+              "title": "Wire Shape",
+              "line": 47,
+              "blocks": [
+                {
+                  "kind": "paragraph",
+                  "line": 49,
+                  "meta": "3 lines"
+                },
+                {
+                  "kind": "type-def",
+                  "line": 53,
+                  "meta": ""
+                },
+                {
+                  "kind": "typename",
+                  "line": 53,
+                  "meta": "root-entry"
+                }
+              ],
+              "secrefs": [],
+              "extrefs": [],
+              "children": []
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "number": "3",
+          "title": "Conformance",
+          "line": 57,
+          "blocks": [
+            {
+              "kind": "paragraph",
+              "line": 59,
+              "meta": "3 lines"
+            }
+          ],
+          "secrefs": [
+            "2",
+            "2.1"
+          ],
+          "extrefs": [
+            "EXTENSION-WIDGET"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "root": "ENTITY-CORE-PROTOCOL",
+  "specs": [
+    {
+      "name": "ARCHITECTURE-NOTES",
+      "path": "corpus/specs/ARCHITECTURE-NOTES.md",
+      "sections": 1,
+      "in_degree_specs": 1,
+      "in_degree_refs": 1,
+      "out_degree": 0
+    },
+    {
+      "name": "ARCHITECTURE-STUB",
+      "path": "corpus/specs/ARCHITECTURE-STUB.md",
+      "sections": 1,
+      "in_degree_specs": 0,
+      "in_degree_refs": 0,
+      "out_degree": 2
+    },
+    {
+      "name": "ENTITY-CORE-PROTOCOL",
+      "path": "corpus/specs/ENTITY-CORE-PROTOCOL.md",
+      "sections": 7,
+      "in_degree_specs": 5,
+      "in_degree_refs": 10,
+      "out_degree": 3
+    },
+    {
+      "name": "ENTITY-NATIVE-TYPE-SYSTEM",
+      "path": "corpus/specs/ENTITY-NATIVE-TYPE-SYSTEM.md",
+      "sections": 8,
+      "in_degree_specs": 3,
+      "in_degree_refs": 3,
+      "out_degree": 1
+    },
+    {
+      "name": "EXTENSION-GADGET",
+      "path": "corpus/specs/EXTENSION-GADGET.md",
+      "sections": 2,
+      "in_degree_specs": 0,
+      "in_degree_refs": 0,
+      "out_degree": 1
+    },
+    {
+      "name": "EXTENSION-WIDGET",
+      "path": "corpus/specs/EXTENSION-WIDGET.md",
+      "sections": 2,
+      "in_degree_specs": 2,
+      "in_degree_refs": 3,
+      "out_degree": 2
+    },
+    {
+      "name": "SPECIFICATION-FORMAT",
+      "path": "corpus/specs/SPECIFICATION-FORMAT.md",
+      "sections": 5,
+      "in_degree_specs": 1,
+      "in_degree_refs": 1,
+      "out_degree": 3
+    }
+  ],
+  "edges": [
+    {
+      "from": "ARCHITECTURE-STUB",
+      "to": "ARCHITECTURE-NOTES",
+      "count": 1
+    },
+    {
+      "from": "ARCHITECTURE-STUB",
+      "to": "ENTITY-CORE-PROTOCOL",
+      "count": 1
+    },
+    {
+      "from": "ENTITY-CORE-PROTOCOL",
+      "to": "ENTITY-NATIVE-TYPE-SYSTEM",
+      "count": 1
+    },
+    {
+      "from": "ENTITY-CORE-PROTOCOL",
+      "to": "EXTENSION-WIDGET",
+      "count": 2
+    },
+    {
+      "from": "ENTITY-CORE-PROTOCOL",
+      "to": "SPECIFICATION-FORMAT",
+      "count": 1
+    },
+    {
+      "from": "ENTITY-NATIVE-TYPE-SYSTEM",
+      "to": "ENTITY-CORE-PROTOCOL",
+      "count": 2
+    },
+    {
+      "from": "EXTENSION-GADGET",
+      "to": "ENTITY-CORE-PROTOCOL",
+      "count": 3
+    },
+    {
+      "from": "EXTENSION-WIDGET",
+      "to": "ENTITY-CORE-PROTOCOL",
+      "count": 2
+    },
+    {
+      "from": "EXTENSION-WIDGET",
+      "to": "ENTITY-NATIVE-TYPE-SYSTEM",
+      "count": 1
+    },
+    {
+      "from": "SPECIFICATION-FORMAT",
+      "to": "ENTITY-CORE-PROTOCOL",
+      "count": 2
+    },
+    {
+      "from": "SPECIFICATION-FORMAT",
+      "to": "ENTITY-NATIVE-TYPE-SYSTEM",
+      "count": 1
+    },
+    {
+      "from": "SPECIFICATION-FORMAT",
+      "to": "EXTENSION-WIDGET",
+      "count": 1
+    }
+  ],
+  "dangling": {
+    "EXTENSION-MISSING": 1
+  },
+  "drift": {
+    "ENTITY-CORE-PROTOCOL": {
+      "ENTITY-CORE-PROTOCOL": 9,
+      "ENTITY-CORE-PROTOCOL.md": 1
+    }
+  },
+  "stale_sections": [
+    {
+      "from": "EXTENSION-GADGET",
+      "to": "ENTITY-CORE-PROTOCOL",
+      "sec": "9.9",
+      "line": 31
+    }
+  ]
+}

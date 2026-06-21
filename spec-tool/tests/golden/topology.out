@@ -1,0 +1,26 @@
+spec topology — 7 specs, 12 cross-spec edges  (root: ENTITY-CORE-PROTOCOL)
+
+most depended-upon (in-degree):
+  ENTITY-CORE-PROTOCOL                   cited by  5 specs,  10 refs
+  ENTITY-NATIVE-TYPE-SYSTEM              cited by  3 specs,   3 refs
+  EXTENSION-WIDGET                       cited by  2 specs,   3 refs
+  ARCHITECTURE-NOTES                     cited by  1 specs,   1 refs
+  SPECIFICATION-FORMAT                   cited by  1 specs,   1 refs
+
+most dependent (out-degree):
+  ENTITY-CORE-PROTOCOL                   depends on  3 specs
+  SPECIFICATION-FORMAT                   depends on  3 specs
+  ARCHITECTURE-STUB                      depends on  2 specs
+  EXTENSION-WIDGET                       depends on  2 specs
+  ENTITY-NATIVE-TYPE-SYSTEM              depends on  1 specs
+  EXTENSION-GADGET                       depends on  1 specs
+
+flags
+  dangling citations (no file in corpus): 1 distinct
+    EXTENSION-MISSING                        x1
+  citation-form drift (DOC vs DOC.md): 1
+    ENTITY-CORE-PROTOCOL           ENTITY-CORE-PROTOCOL x9, ENTITY-CORE-PROTOCOL.md x1
+  stale section refs (target section absent): 1
+    EXTENSION-GADGET -> ENTITY-CORE-PROTOCOL §9.9  ·L31
+
+(internal bare-§ validation deferred — a bare §N.M is often a prose-named cross-doc ref, not a self-ref; needs prose-doc-name resolution to be precise.)
