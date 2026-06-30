@@ -22,3 +22,9 @@ path  = "spec-tool/README.md"
 title = "`spec` — the unified spec toolkit (v2)"
 blurb = "One tool, one functional core, commands as pathways into it."
 group = "Overview"
+
+[[doc]]
+path  = "docs/status/STATUS.md"
+title = "Status"
+blurb = "Current project status — where the project is, recent work, backlog, and what's next."
+group = "Overview"

@@ -41,7 +41,7 @@ not the tool's own location.)
 
 ## License
 
-Tooling is code: **MIT** (or the project's code license). Distinct from the spec corpora it
+Tooling is code: **Apache-2.0** (the project's code license). Distinct from the spec corpora it
 operates on (which are dual-licensed CC-BY-ND-4.0 / Apache-2.0).
 
 ---
